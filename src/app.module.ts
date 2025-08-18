@@ -6,10 +6,12 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { ProcessoModule } from './processo/processo.module';
 import { ItemClassificadoModule } from './item-classificado/item-classificado.module';
+import { UsuarioService } from './usuario/usuario.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [UsuarioModule, ClienteModule, ProcessoModule, ItemClassificadoModule],
-  controllers: [AppController, UsuarioController],
+  imports: [UsuarioModule, ClienteModule, ProcessoModule, ItemClassificadoModule, AuthModule],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
