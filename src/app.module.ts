@@ -8,9 +8,10 @@ import { ProcessoModule } from './processo/processo.module';
 import { ItemClassificadoModule } from './item-classificado/item-classificado.module';
 import { UsuarioService } from './usuario/usuario.service';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [UsuarioModule, ClienteModule, ProcessoModule, ItemClassificadoModule, AuthModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), UsuarioModule, ClienteModule, ProcessoModule, ItemClassificadoModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

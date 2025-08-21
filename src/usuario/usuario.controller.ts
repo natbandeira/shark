@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
+import { UsuarioDto } from './dto/usuario.dto';
 
 @Controller('usuario')
 export class UsuarioController {
@@ -13,12 +14,12 @@ export class UsuarioController {
   }
 
   @Get()
-  findAll(): CreateUsuarioDto[] {
+  findAll(): UsuarioDto[] {
     return this.usuarioService.findAll();
   }
 
   @Get('/:id')
-  findById(@Param('id') id: string): CreateUsuarioDto {
+  findById(@Param('id') id: string): UsuarioDto {
     return this.usuarioService.findById(id);
   }
 
